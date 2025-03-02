@@ -1,0 +1,98 @@
+#---------------------------------------------------------------
+# Create a 4X4 3d List and assign values to it and then print it
+#----------------------------------------------------------------
+
+import datetime
+print(datetime.datetime.now())
+
+tdl = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0],[0, 0, 0, 0]]
+
+print('Tataaaaaaaaaaaaa\n',tdl)
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(tdl[i][j],end=" ")
+    print()
+
+for k in range(0,4):
+    for l in range(0,4):
+        tdl[k][l]=(k*1+1)
+print()
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(tdl[i][j],end=" ")
+    print()
+#--------------------------------END END-------------------------------
+#----------------------------------------------------------------------
+# Create a empty 3d List and assign values to it and then print it
+#----------------------------------------------------------------------
+tdl=[]
+print("Initial 2D list:", tdl)  
+for k in range(0,4):
+    row=[]
+    for l in range(0,4):
+        row.append(k*1+1)
+        print(row)
+
+    tdl.append(row)
+print("Final 2D list:", tdl)
+
+for i in range(0,4):
+    for j in range(0,4):
+        print(tdl[i][j],end=" ")
+    print()
+#-------------------------2n Method len function---------------------
+def search_val(tdl,num):
+    for i in range(0,len(tdl)):
+        for j in range(0,len(tdl[i])):
+            if tdl[i][j] == num:
+                return (i,j) 
+    return (-1,-1)
+
+print(search_val([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 5))  # Output: (1, 1)
+#print(search_element([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 10))  # Output: (-1, -1)
+#--------------------------------END END-------------------------------
+#----------------------------------------------------------------------
+# gvien a 3x3 2d List find the sum of each row and print then as a simple list
+#----------------------------------------------------------------------
+def sum_rows(tdl):
+    srows=[]
+    for i in range(0,len(tdl)):
+        sumline=sum(tdl[i])
+        #print(f"row {1} sum is: {sr}")
+        srows.append(sumline)
+    print(srows)    
+
+print(sum_rows([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))  # Output: [6, 15, 24]
+print(sum_rows([[1], [2], [3]]))  # Output: [1, 2, 3]
+print(sum_rows([[], [], []]))  # Output: [0, 0, 0]
+#--------------------------------END END-------------------------------
+
+#----------------------------------------------------------------------
+# take Two 2x2 lists and add then to make One 2x2 2d List
+#----------------------------------------------------------------------
+def add_mat(mt1,mt2):
+    mf=[]
+    num=0
+    # print(len(mt1), len(mt2))
+    print(f"1st 2D List is : {mt1}")
+    print(f"2nd 2D List is : {mt2}")
+
+    for i in range(0,len(mt1)):
+        row=[]
+        for j in range(0,len(mt1[i])):
+            num=mt1[i][j]+mt2[i][j]
+            # print(f"mt1  :  {mt1[i][j]},  mt2  :{mt2[i][j]} and sum is {num}")
+            row.append(num)
+            # print(f"row is : {row}")
+        mf.append(row)
+    
+    return mf
+
+   
+print(add_mat([[1, 2], [3, 4]], [[5, 6], [7, 8]]))  # Output: [[6, 8], [10, 12]]
+print(add_mat([], []))  # Output: []
+
+
+#--------------------------------END END-------------------------------

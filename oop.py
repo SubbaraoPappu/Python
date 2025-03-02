@@ -117,3 +117,89 @@ earth=Planet()
 
 earth.rev_rot()
 #------------------------------------------------
+class Square:
+    def __init__(self, side): 
+        self.side=side
+    def calculate_area(self):
+        if self.side <= 0:
+            return -1
+        else:
+            self.area=self.side*self.side
+            return self.side*self.side
+
+    def calculate_perimeter(self):
+        if self.side <= 0:
+            return -1
+        else:
+            self.peri=self.side*4
+            return self.side*4
+            #return self.perimeter
+        
+    # TODO: Calculate and return the perimeter of the square
+
+fsq=Square(6)
+print(fsq.calculate_area())
+print(fsq.calculate_perimeter())
+print(f"perimeter is :{fsq.peri}")
+print(f"area is:{fsq.area}")
+
+#------------------------------------------------
+import math
+class Point:
+
+    def __init__(self, x, y): 
+        self.x = x
+        self.y = y
+
+    def move(self, dx, dy):
+        self.x+=dx
+        self.y+=dy
+        
+    def distance_to(self, other):
+        self.x2=other.x
+        self.y2=other.y
+        self.dis=math.sqrt((self.x2-self.x)**2+(self.y2-self.y)**2)
+
+p1=Point(3,4)
+print(p1.x)
+print(p1.y)
+p1.move(3,4)
+print(p1.x)
+print(p1.y)
+
+p2=Point(8,14)
+p1.distance_to(p2)
+print(p1.dis)
+#-----------------------------------------
+#--------------EVERTYTHIIN IN PYTHON IS AN OBJECT--------------
+# EVEN A FUNCTION IS AN OBJECT
+
+# In Python, functions are also treated as objects. This allows you to assign functions to variables and pass them around, 
+# giving you a lot of flexibility.
+def do_something():
+    print("something")
+    
+# Functions as objects
+print(do_something)  # Output: <function do_something at some_memory_address>
+    
+# Assigning functions to variables
+test = do_something
+test()  # Output: something
+#---------------------------
+# The function do_something() is an object and resides at a specific memory address. 
+# You can assign it to a variable like test, and call it through that variable.
+
+#------------------------
+def dosome():
+    print("SUBBA11")
+
+test=dosome
+print(test)
+print(dosome)
+test()
+dosome()
+
+test=dosome()
+print(test)
+#---------------------------
+
