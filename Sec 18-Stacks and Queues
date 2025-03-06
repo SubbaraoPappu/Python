@@ -1,0 +1,210 @@
+
+#----------------------------------------------------------------------------------
+    # Introduction To Stack as a List
+    # -----------------------------------
+    # WHAT IS A STACK?
+    # -------------------
+    #       A stack is a LIFO (Last In, First Out) data structure. 
+    #       This means the last element you insert is the first one you take out.
+
+    # Push (Add to top of stack)
+    #     Initialize an empty list and use the append() method to add elements.
+#----------------------------------------------------------------------------------
+numbers = []
+ 
+numbers.append(1)
+numbers.append(2)
+numbers.append(3)
+numbers.append(4)
+print(numbers)
+print("Popped element:", numbers.pop())  # Output: Popped element: 4
+print(numbers)
+
+#----------------------------------------------------------------------------------
+    # IsEmpty (Check if stack is empty)
+    #   Use the length of the list to check.
+#----------------------------------------------------------------------------------
+print("Is stack empty?", not bool(numbers))  # Output: Is stack empty? False
+# bool() returns        ---> TRUE when list is not empty
+# not bool() returns    ---> TRUE when list is empty
+
+is_empy=not bool(numbers)         
+print(is_empy)
+is_empy= bool(numbers)
+print(is_empy)
+#----------------------------------------------------------------------------------
+    # TOP inspects the top element of the stack 
+    #   this will only inspect the element existanc but does not remove like pop() does
+#----------------------------------------------------------------------------------
+mlist = [1,2,3,4]
+print("mlist is:",mlist)
+print("Top of stack ", mlist[-1])
+print("mlist is:",mlist)
+print("popping the last element now from list :",mlist.pop())
+print("mlist  after pop is:",mlist)
+print("Top of stack ", mlist[-1])
+
+#----------------------------------------------------------------------------------
+#       Stack Implementation -- Pls not the isempty functio has 2 implementations
+# 
+#----------------------------------------------------------------------------------
+class stack:
+    def __init__(self):
+        self.slist =  []
+    def isempty(self):
+        return len(self.slist)==0 # check len and return true when len =0
+    def push(self, item):
+        self.slist.append(item)
+    def pop(self):  
+        if not self.isempty():      #check len before popping an element, if the len>0 then pop an element and return
+            return self.slist.pop()
+    def top(self):
+        if not self.isempty():
+            return self.slist[-1]
+
+    def isempty2(self):
+        #print("ssssss:::", bool(self.slist), not bool(self.slist))
+        return not bool(self.slist)    
+    def pop2(self):  
+        #print('222222222222')
+        if not self.isempty2():
+            return self.slist.pop()
+    def top2(self):
+        if not self.isempty2():
+            return self.slist[-1]
+
+    def display(self):
+        print (self.slist)
+
+# Create a Stack
+s = stack()
+    
+# Push elements
+s.push(1)  # Adding 1 to the stack
+s.push(2)  # Adding 2 to the stack
+s.push(3)  # Adding 3 to the stack
+    
+# Display the stack
+s.display()  # Output: [1, 2, 3]
+    
+# # Pop elements
+print(s.pop2())  # Output: 3 (removing top element)
+s.display()  # Output: [1, 2]
+    
+# # Top element
+print(s.top2())  # Output: 2 (top element)
+    
+# # Check if stack is empty
+print(s.isempty())  # Output: False (stack is not empty)
+print(s.isempty2())  # Output: False (stack is not empty)
+
+#-------------------End of Program-------------------------------------
+
+#------------------------- QUEUES--------------------------------
+
+numbers = []
+ 
+numbers.append(1)
+numbers.append(2)
+numbers.append(3)
+numbers.append(4)
+print(numbers) 
+print("Queue after enqueues:", numbers)  # Output: Queue after enqueues: [1, 2, 3, 4]
+print(numbers)
+print("Dequeued element:", numbers.pop(0))  # Output: Dequeued element: 1
+print(numbers)
+print("Front of queue:", numbers[0])  # Output: Front of queue: 2
+print(numbers)
+print("End of queue:", numbers[-1])  # Output: Front of queue: 2
+print(numbers)
+
+#-------------------End of Program-------------------------------------
+
+
+
+# Queue class
+class Queue:
+    def __init__(self):
+        self.items = []  # Initialize an empty list
+    
+    def enqueue(self, item):
+        self.items.append(item)  # Append the item to the list
+        
+    def dequeue(self):
+        if not self.is_empty():  # Check if the queue is not empty
+            return self.items.pop(0)  # Remove and return the first element
+        
+    def front(self):
+        if not self.is_empty():  # Check if the queue is not empty
+            return self.items[0]  # Return the first element
+    
+    def is_empty(self):
+        return len(self.items) == 0  # True if empty, otherwise False
+    
+    def display(self):
+        print(self.items)  # Print the list items
+ 
+# Create a Queue
+q = Queue()
+
+# Enqueue elements
+q.enqueue(1)  # Adding 1 to the queue
+q.enqueue(2)  # Adding 2 to the queue
+q.enqueue(3)  # Adding 3 to the queue
+ 
+# Display the queue
+q.display()  # Output: [1, 2, 3]
+ 
+# Dequeue elements
+print(q.dequeue())  # Output: 1 (removing front element)
+q.display()  # Output: [2, 3]
+ 
+# Front element
+print(q.front())  # Output: 2 (front element)
+ 
+# Check if queue is empty
+print(q.is_empty())  # Output: False (queue is not empty)
+
+#-------------------End of Program-------------------------------------
+
+#-------------------End of Program-------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------
-# shtting exercise -- roataion of list of values for n times
+# shtting exercise -- roataion of list of values for n times 
 #----------------------------------------------------------------------
 def rotate_list(list, num):
     if not list:
@@ -37,7 +37,7 @@ rotate_list(['subbu','pandu','baru','chellipapa'],4)
 #--------------------------------END END-------------------------------
 
 #----------------------------------------------------------------------
-# Encoding a given list of workds with character shifting 
+# Encoding a given list of words with character shifting 
 # wiht z or Z boundry conditions checks
 #----------------------------------------------------------------------
 
@@ -156,7 +156,7 @@ countries.append(Country('Russia',80,900))
 We've created four instances representing different countries.
 
 =================
-SORTING COUNTRIES
+SORTING COUNTRIES  
 ==================
 We can sort the list of countries based on certain attributes. Here, we're using the attrgetter function from the operator module:
 
@@ -174,7 +174,8 @@ We can find the country with the maximum and minimum population or area:
     # print(max(countries, key=attrgetter('area')))
 
 #----------------------------------------------------------------------
-#----------------------------------------------------------------------#----------------------------------------------------------------------
+#----------------------------------------------------------------------
+#----------------------------------------------------------------------
 #----------------------------------------------------------------------
 class Country:
 
